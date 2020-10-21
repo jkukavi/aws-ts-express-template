@@ -1,9 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
-export default async function getWeatherReport(city) {
+export async function getWeatherReport(city) {
   const weather = await getWeather(city);
   return weather.data.hourly;
-};
+}
+
+export async function getTemperature(city) {
+  const weather = await getWeather(city);
+  return weather.data.hourly;
+}
 
 //helpers
 
