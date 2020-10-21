@@ -8,7 +8,7 @@ module.exports = {
   module: {},
   resolve: {
     extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
-    modules: [path.resolve(__dirname), "node_modules"],
+    modules: [path.resolve(__dirname, "src"), "node_modules"],
   },
   output: {
     libraryTarget: "commonjs",
