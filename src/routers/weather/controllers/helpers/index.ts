@@ -2,12 +2,14 @@ import axios from "axios";
 
 export async function getWeatherReport(city) {
   const weather = await getWeather(city);
-  return weather.data.hourly;
+  return weather.data.hourly.summary;
 }
 
 export async function getTemperature(city) {
   const weather = await getWeather(city);
-  return weather.data.hourly;
+  const temperature = weather.data.hourly.data[0].temperature;
+  const response = `It is now ${temperature} Farenheit in Zagreb.`;
+  return response;
 }
 
 //helpers

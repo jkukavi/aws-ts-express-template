@@ -2,15 +2,42 @@
 
 // TODO: mention auth and correct endpoints
 
-GET https://6ecxqukew7.execute-api.us-east-1.amazonaws.com/dev
+To test locally:
 
-POST https://6ecxqukew7.execute-api.us-east-1.amazonaws.com/dev/weather
+```js
+npm run start
+```
 
-body schema:
+URL: http://localhost:8080
 
-```json
+Or deployed:
+
+URL: https://6ecxqukew7.execute-api.us-east-1.amazonaws.com/dev
+
+ENDPOINTS:
+
+POST /authorization
+
+bodyschema:
+
+```js
 {
-  "city": _string_,
-  "time": _number_
+  name: string,
+  mail: string
+}
+```
+
+---
+
+POST /weather/temperature
+
+POST /weather/report
+
+bodyschema:
+
+```js
+{
+  city: string,
+  time: string
 }
 ```
