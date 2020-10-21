@@ -1,7 +1,8 @@
 import basicAuth from "express-basic-auth";
-import getUsers from "./getUsers";
 
 export default basicAuth({
-  users: getUsers(),
+  users: {
+    zelena: process.env.ZELENA_JABUKA_PASSWORD,
+  },
   unauthorizedResponse: "Unauthorized, sorry.",
 });
