@@ -6,7 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,13 +17,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12'
-    - run: |
-        npm install yarn
-        yarn
-        sls config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{secrets.AWS_SECRET}}
-        npm run build
-        sls deploy
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+      - run: |
+          npm install
+          sls config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{secrets.AWS_SECRET}}
+          npm run build
+          sls deploy
