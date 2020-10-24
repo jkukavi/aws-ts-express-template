@@ -22,7 +22,8 @@ jobs:
         with:
           node-version: "12"
       - run: |
-          npm install
-          sls config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{secrets.AWS_SECRET}}
+          npm install yarn
+          yarn
+          serverless config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{secrets.AWS_SECRET}}
           npm run build
-          sls deploy
+          serverless deploy
