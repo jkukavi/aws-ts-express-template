@@ -38,6 +38,6 @@ bodyschema:
 ```js
 {
   city: string,
-  time: string
+  time: number
 }
 ```
