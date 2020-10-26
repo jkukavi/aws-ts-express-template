@@ -14,7 +14,10 @@ jobs:
         with:
           node-version: "12"
       - name: installing yarn&dependencies
-        run: npm run test
+        run: |
+          npm install yarn
+          yarn
+          npm run test
 
   buildAnddeploy:
     runs-on: ubuntu-latest
